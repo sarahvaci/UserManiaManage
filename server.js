@@ -38,7 +38,7 @@ app.use(session({
 // This is the handle bars configuration.
 app.engine('hbs', hbs({extname: 'hbs',defaultLayout: 'layout', layoutsDir: __dirname + '/views/layouts/'})); //this is a file called layout handlebars and where is it? In the directory.
 app.set('views', path.join(__dirname, 'views')); 
-app.set('view engine', 'hbs'); //we dont want to run the html always if its not changing so we use layout.
+app.set('view engine', 'hbs'); //we dont want to run the html always if its not changing so we use layout file. every file we create will inherit info from the layout file.
 // This middleware will check if a user's cookie is still saved in a browser and the user is not set. If so, it will automatically log the user out.
 // This usually happens when you stop your express server after logging in. Your cookie still remains saved in the browser.
 app.use((req, res, next) => {
